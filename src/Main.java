@@ -1,5 +1,5 @@
-import lesson_16.Car;
-import lesson_16.Transport;
+import lesson_16.*;
+
 public class Main {
     public static void main(String[] args) {
         Car simpleCar1 = new Car("Lada", "Granta", 1.7, "Желтый", 2015,
@@ -12,5 +12,14 @@ public class Main {
         System.out.println(simpleCar1);
         System.out.println(simpleCar2);
         System.out.println(simpleCar3);
+
+
+        Bus simpleBus1 = new Bus("Лиаз","677", 1960, "USSR", "Yellow", 70, 60);
+        Bus simpleBus2 = new Bus("Зил","158", 1957, "USSR", "Green", 65, 65);
+        Bus simpleBus3 = new Bus("Раф","251", 1955, "USSR", "White", 70, 40);
+
+        System.out.println(simpleBus1);
+        System.out.println(simpleBus2);
+        System.out.println(simpleBus3);
     }
 }

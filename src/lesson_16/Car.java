@@ -17,8 +17,8 @@ public class Car extends Transport{
     private String transmission;
     final private String bodyType;            // final
     private String registrationNumber;   // M976MM777
-    final int numberSeats;                    // final
-    boolean isSummerWheels;
+    private final int numberSeats;                    // final
+    private boolean isSummerWheels;
 
     boolean startMoving = false;
 

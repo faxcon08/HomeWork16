@@ -21,7 +21,7 @@ public class Transport {
     } // Default_Values
 
     /////// constructor /////
-    Transport(String brand,String model, int releaseYear, String productionCountry, String bodyColor, int maxSpeed) {
+    public Transport(String brand,String model, int releaseYear, String productionCountry, String bodyColor, int maxSpeed) {
 
 
         java.time.LocalDate date = java.time.LocalDate.now();
@@ -44,7 +44,10 @@ public class Transport {
         }
         return forCheck.trim().replace("\\s+"," ");
     }
-
+    @Override
+    public String toString() {
+        return String.format("Brand[%1$s], Model[%2$s], Year[%3$d], Country[%4$s], Color[%5$s], MaxSpeed[%6$d]", brand, model, releaseYear, productionCountry, bodyColor, maxSpeed);
+    }
     /////// setters ///////
 
     public void setBodyColor(String bodyColor) {
