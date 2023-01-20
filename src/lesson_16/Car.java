@@ -67,6 +67,9 @@ public class Car extends Transport{
                 bodyColor,
                 maxSpeed);
 
+       /* В конструкторе наследника  требуется, чтобы вызов super-конструктора был самым первым. Даже не допускается вызов методов-проверок в super-конструкторе.
+        Как тогда осуществялть проверку final-полей в родителе, если потребуется, допустим, доп. проверка при инициализации ? Релизовал проверку в родителе.*/
+
         setEngineVolume(engineVolume);
         setTransmission(transmission);
         setRegistrationNumber(registrationNumber);
