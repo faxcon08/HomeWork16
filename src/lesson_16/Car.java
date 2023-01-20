@@ -34,12 +34,12 @@ public class Car extends Transport{
 
         public void startKey() {
             startMoving=true;
-            System.out.println("Автомобиль "+brand+" "+model+ " начал движение. ");
+            System.out.println("Автомобиль "+getBrand()+" "+getModel()+ " начал движение. ");
         }
 
         public void stopKey() {
             startMoving=false;
-            System.out.println("Автомобиль "+brand+" "+model+ " остановился. ");
+            System.out.println("Автомобиль "+getBrand()+" "+getModel()+ " остановился. ");
         }
         @Override
         public String toString() {
@@ -68,7 +68,7 @@ public class Car extends Transport{
                 maxSpeed);
 
        /* В конструкторе наследника  требуется, чтобы вызов super-конструктора был самым первым. Даже не допускается вызов методов-проверок в super-конструкторе.
-        Как тогда осуществялть проверку final-полей в родителе, если потребуется, допустим, доп. проверка при инициализации ? Релизовал проверку в родителе.*/
+        Как тогда реализовать проверку final-полей super-а  в наследнике , если потребуется, допустим, доп. проверка(доп. условия) при инициализации наследника? Пришлось Релизовывать проверку в родителе.*/
 
         setEngineVolume(engineVolume);
         setTransmission(transmission);
@@ -112,33 +112,13 @@ public class Car extends Transport{
     public String toString() {
         String wheelsType = (isSummerWheels) ? "Летня резина" : "Зимняя резина";
         return String.format("Brand: [%1$s] model:[%2$s] Volume: [%3$.2f] Color: [%4$s]" +
-                " Year: %5$d Country: [%6$7s] Тип Кузова: [%7$s] Коробка передач: [%8$s] Регистрационный номер: [%9$s] Количество мест: [%10$d] [%11$s] Скорость:[%12$d]","'"+brand+"'","'"+model+"'",
-                engineVolume, bodyColor, releaseYear,productionCountry,bodyType,transmission, registrationNumber, numberSeats, wheelsType,maxSpeed);
+                " Year: %5$d Country: [%6$7s] Тип Кузова: [%7$s] Коробка передач: [%8$s] Регистрационный номер: [%9$s] Количество мест: [%10$d] [%11$s] Скорость:[%12$d]","'"+getBrand()+"'","'"+getModel()+"'",
+                engineVolume, getBodyColor(), getReleaseYear(),getProductionCountry(),bodyType,transmission, registrationNumber, numberSeats, wheelsType,getMaxSpeed());
     }
     ///////////////// getters  ///////////
 
-    public String getBrand() {
-        return brand;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
     public double getEngineVolume() {
         return engineVolume;
-    }
-
-    public String getBodyColor() {
-        return bodyColor;
-    }
-
-    public int getReleaseYear() {
-        return releaseYear;
-    }
-
-    public String getProductionCountry() {
-        return productionCountry;
     }
 
     public String getTransmission() {
@@ -173,10 +153,7 @@ public class Car extends Transport{
             System.out.println("Некорректный ввод. Значение будет измененено на :"+Default_Values.default_engine_volume);
             this.engineVolume=Default_Values.default_engine_volume;
         }
-    }
-    public void setColor(String color) {
-        this.bodyColor=simpleCheckString(color, Default_Values.default_Color);
-    }
+    }// setEngineVolume
 
     public void setTransmission(String transmission) {
         transmission = simpleCheckString(transmission, Default_Values.default_transmission).toLowerCase();

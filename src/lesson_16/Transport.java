@@ -3,12 +3,12 @@ package lesson_16;
 public class Transport {
 
     /////// fields ///////
-    protected String brand;
-    protected String model;
-    protected final int releaseYear;
-    protected final String productionCountry;
-    protected String bodyColor;
-    protected int maxSpeed;
+    private final String brand;
+    private final String model;
+    private final int releaseYear;
+    private final String productionCountry;
+    private String bodyColor;
+    private int maxSpeed;
 
     ////////////////////////////////// class for default values ///////////////////////////
     protected static class Default_Values{
@@ -91,7 +91,7 @@ public class Transport {
         return bodyColor;
     }
 
-    public double getMaxSpeed() {
+    public int getMaxSpeed() {
         return maxSpeed;
     }
 } // Transport
